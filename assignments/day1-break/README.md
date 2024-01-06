@@ -127,7 +127,7 @@ The rating information we just retrieved is based on `title_id`, which is not a 
 
 To join two or more tables, we first list them in the `FROM` clause. We specify how to join in the `WHERE` clause. The `WHERE` clause may further contain additional filters for each individual tables.
 
-Here is how to compute in SQL the same join we computed using pandas:
+Here is the resulting query:
 
 ```sql
 sqlite> SELECT t.primary_title, r.rating, r.votes 
