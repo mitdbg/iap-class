@@ -9,13 +9,13 @@ Before starting, make sure you have activated the python virtual environment for
 We will be populating our databse with part of the [IMDB dataset](https://developer.imdb.com/non-commercial-datasets/), which contains information about movies, actors etc. from [IMDB](https://www.imdb.com/). Because the full dataset is large, we have selected a subset including only information relevant for movies released in 2020. We have loaded this part of the dataset into a SQLite database and compressed the resulting file for easier distribution, leading to `datasets/imdb/imdb-2020-db.tar.gz`. From within this directory, run the following command to decompress the file:
 
 ```
-tar -xzvf ../../datasets/imdb/imdb-2020-db.tar.gz -C ../../datasets/imdb
+tar -xzvf ../datasets/imdb/imdb-2020-db.tar.gz -C ../datasets/imdb
 ```
 
 (Optional) If you would like to download and use the full IMDB dataset instead, you can use the following command from within this directory (heads up, this will take several minutes and use up around 14 GB). This will create a file called `datasets/imdb/imdb.db`.
 
 ```
-imdb-sqlite --cache-dir ../../datasets/imdb/ --db ../../datasets/imdb/imdb.db
+imdb-sqlite --cache-dir ../datasets/imdb/ --db ../datasets/imdb/imdb.db
 ```
 
 ## Exploration
@@ -25,7 +25,7 @@ imdb-sqlite --cache-dir ../../datasets/imdb/ --db ../../datasets/imdb/imdb.db
 In a bash shell, let's connect to sqlite and have a look at our data. The ``-column -header`` settings pretty print the output into columns with a header. We can see the tables loaded into the database by running ``.tables`` and the schema of these tables with ``.schema [tablename]``. We will then run our first sql query to fetch some fields of the first few rows of the titles tables. Note that typically table names, column names, and SQL keywords are not case sensitive.
 
 ```sh
-(iap-data-venv) ~/iap-class/assignments/day1-break$ sqlite3 ../../datasets/imdb/imdb-2020.db -column -header
+(iap-data-venv) ~/iap-class/assignments/day1-break$ sqlite3 ../datasets/imdb/imdb-2020.db -column -header
 SQLite version 3.37.2 2022-01-06 13:25:41
 Enter ".help" for usage hints.
 sqlite> .tables
@@ -173,7 +173,7 @@ Equipe E
 In this query, we first compute the table of excellent titles using the construct `WITH table_name(column_names...) AS (query)`. We then perform the join using this temporary table. 
 
 
-### Questions
+## Questions
 
 
 1. (Simple aggregation and ordering) Using the `crew` table, compute the number of distinct actors and actresses. Return the category (`actor` or `actress`) and the count for each category. Order by category (ascending).
