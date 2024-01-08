@@ -4,7 +4,11 @@ In this first assignment we will introduce you to a simple DBMS called SQLite - 
 
 ## Setup
 
-Before starting, make sure you have activated the python virtual environment for these assignments.
+Before starting, make sure you have activated the python virtual environment for these assignments, by running the following command from within this directory:
+
+```
+source ../iap-data-venv/bin/activate
+```
 
 We will be populating our databse with part of the [IMDB dataset](https://developer.imdb.com/non-commercial-datasets/), which contains information about movies, actors etc. from [IMDB](https://www.imdb.com/). Because the full dataset is large, we have selected a subset including only information relevant for movies released in 2020. We have loaded this part of the dataset into a SQLite database and compressed the resulting file for easier distribution, leading to `datasets/imdb/imdb-2020-db.tar.gz`. From within this directory, run the following command to decompress the file:
 
@@ -25,7 +29,7 @@ imdb-sqlite --cache-dir ../datasets/imdb/ --db ../datasets/imdb/imdb.db
 In a bash shell, let's connect to sqlite and have a look at our data. The ``-column -header`` settings pretty print the output into columns with a header. We can see the tables loaded into the database by running ``.tables`` and the schema of these tables with ``.schema [tablename]``. We will then run our first sql query to fetch some fields of the first few rows of the titles tables. Note that typically table names, column names, and SQL keywords are not case sensitive.
 
 ```sh
-(iap-data-venv) ~/iap-class/assignments/day1-break$ sqlite3 ../datasets/imdb/imdb-2020.db -column -header
+(iap-data-venv) ~/iap-class/assignments$ sqlite3 ../datasets/imdb/imdb-2020.db -column -header
 SQLite version 3.37.2 2022-01-06 13:25:41
 Enter ".help" for usage hints.
 sqlite> .tables
@@ -108,16 +112,16 @@ Beyond aggregation, we can apply filtering using a `WHERE` clause.
 sqlite> SELECT * 
 FROM ratings 
 WHERE rating >= 9 AND votes >= 100 
-ORDER BY rating DESC 
+ORDER BY rating DESC, votes DESC 
 LIMIT 5;
 
 title_id    rating  votes
 ----------  ------  -----
+tt30151030  10      114  
 tt13555390  10      104  
 tt15875180  10      100  
-tt30151030  10      114  
 tt11028174  9.9     20545
-tt12774464  9.9     621  
+tt9313978   9.9     17664  
 ```
 
 ### 3. Joining
@@ -133,16 +137,16 @@ Here is the resulting query:
 sqlite> SELECT t.primary_title, r.rating, r.votes 
 FROM titles AS t, ratings AS r 
 WHERE t.title_id = r.title_id AND rating >= 9 AND votes >= 100 
-ORDER BY rating DESC 
+ORDER BY rating DESC, votes DESC 
 LIMIT 5;
                       
 primary_title                                                      rating  votes
 -----------------------------------------------------------------  ------  -----
+Take 69 B                                                          10      114  
 BJ Korros/JoJo Siwa at The 84th Annual Hollywood Christmas Parade  10      104  
 All Over the World: Yamashita Tomohisa to sekai de deau            10      100  
-Take 69 B                                                          10      114  
 The View from Halfway Down                                         9.9     20545
-Equipe E                                                           9.9     621  
+Victory and Death                                                  9.9     17664
 ```    
 
 ### 4. Common Table Expressions
