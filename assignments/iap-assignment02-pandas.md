@@ -1,6 +1,14 @@
-# Experimenting with Pandas
+# Assignment 2: Experimenting with Pandas
 
 In this second assignment, we will use pandas to perform similar tasks as assignment 1. Pandas is one of the most popular tools for working with relatively small datasets (i.e. that fit in the main memory of a single machine). It uses an abstraction called dataframes to manipulate tabular data. It natively supports reading data from a variety of common file formats including CSVs, fixed-width files, columnar formats, HDF5, and JSON. It also allows you to import data from common database management systems (DBMSs). A comprehensive list is [here](https://pandas.pydata.org/pandas-docs/stable/reference/io.html).
+
+## Table of Contents
+- [Setup](#setup)
+- [Exploration](#exploration)
+  * [Reading and Parsing Files](#1-reading-and-parsing-files)
+  * [Filtering and Aggregation](#2-filtering--aggregation)
+  * [Joining](#3-joining)
+- [Questions](#questions)
 
 ## Setup
 
@@ -18,10 +26,7 @@ tar -xzvf ../datasets/imdb/imdb-2020-files.tar.gz -C ../datasets/imdb
 
 ## Exploration
 
-### Pandas
-
-
-#### 1. Reading and parsing files
+### 1. Reading and parsing files
 First, let's have a look at the first few lines of the data file for IMDB titles:
 
 ```bash
@@ -82,7 +87,7 @@ dtype: object
 ```
 
 
-#### 2. Filtering & Aggregation
+### 2. Filtering & Aggregation
 Now let's get to answering the same simple questions as in assignment 1! We select the `runtime_minutes` column and compute the mean over it as follows:
 
 ```py
@@ -172,7 +177,7 @@ Name: rating, Length: 55457, dtype: bool
 We can then combine these vectors with boolean operations (&, |), as we did above.
 
 
-#### 3. Joining
+### 3. Joining
 
 As in assignment 1, the rating information we just retrieved is based on `title_id`, which is not a very human-interpretable field. To find the corresponding movie titles, we need to join these ratings with their corresponding movies. We will do this in two steps. First, we find all ratings greater than 9 with at least 100 votes:
 

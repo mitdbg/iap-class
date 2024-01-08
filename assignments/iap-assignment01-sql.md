@@ -1,6 +1,16 @@
-# Experimenting with SQL
+# Assignment 1: Experimenting with SQL
 
 In this first assignment we will introduce you to a simple DBMS called SQLite - perhaps among the [top 5 most deployed software packages](https://www.sqlite.org/mostdeployed.html) of all time! Unlike most DBMSs which run all the time and are accessed over a network. SQLite runs as a library in the same process as your program and stores all its state in a single file. This makes it easy to deploy, use, and play around with SQL. We will use SQLite to run some simple SQL queries - you can then feel free to create even more involved queries to better hone your SQL skills!
+
+## Table of Contents
+- [Setup](#setup)
+- [Exploration](#exploration)
+  * [Exploring the Schema](#1-exploring-the-schema)
+  * [Filtering and Aggregation](#2-filtering--aggregation)
+  * [Joining](#3-joining)
+  * [Common Table Expressions (CTEs)](#4-common-table-expressions)
+- [Questions](#questions)
+
 
 ## Setup
 
