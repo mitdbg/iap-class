@@ -24,6 +24,8 @@ We will be using CSV files derived from the part of the [IMDB dataset](https://d
 tar -xzvf ../datasets/imdb/imdb-2020-files.tar.gz -C ../datasets/imdb
 ```
 
+[*Back to top*](#table-of-contents)
+
 ## Exploration
 
 ### 1. Reading and parsing files
@@ -86,6 +88,7 @@ genres              object
 dtype: object
 ```
 
+[*Back to top*](#table-of-contents)
 
 ### 2. Filtering & Aggregation
 Now let's get to answering the same simple questions as in assignment 1! We select the `runtime_minutes` column and compute the mean over it as follows:
@@ -176,6 +179,7 @@ Name: rating, Length: 55457, dtype: bool
         
 We can then combine these vectors with boolean operations (&, |), as we did above.
 
+[*Back to top*](#table-of-contents)
 
 ### 3. Joining
 
@@ -234,6 +238,8 @@ Now let's find the top 5 of these movies with the highest rating, breaking ties 
 
 There are a lot of things you can do with Pandas that we have not covered, including different kinds of aggregation, plots, joins, input and output formats, etc. You are encouraged to use [online resources](https://pandas.pydata.org/docs/index.html) to explore this for yourself.
 
+[*Back to top*](#table-of-contents)
+
 ## Questions
 
 1. Using the `crew` table, compute the number of distinct actors and actresses. Return the category (`actor` or `actress`) and the count for each category. Order by category (ascending).
@@ -242,3 +248,5 @@ There are a lot of things you can do with Pandas that we have not covered, inclu
 4. Find the movie with the most actors and actresses (cumulatively). Unlike in question (3), you should return all such movies. Again, return the `title_id`, `primary_title` and number of actors. Order by `primary_title` (ascending).
 5. Find the actors/actresses who played in the largest number of movies. The result set may contain one or many persons. Return the category ('actor' or 'actress'), the name, and the number of appearances. Order the results by name (ascending). Use the `people` table to get the name of actors.
 6. Find the actors/actresses with at least 5 movies that have the highest average ratings on their movies. Return the name, the number of titles and the average rating. Order the results by average rating (descending) and then name (ascending).
+
+[*Back to top*](#table-of-contents)

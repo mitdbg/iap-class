@@ -32,6 +32,8 @@ tar -xzvf ../datasets/imdb/imdb-2020-db.tar.gz -C ../datasets/imdb
 imdb-sqlite --cache-dir ../datasets/imdb/ --db ../datasets/imdb/imdb.db
 ```
 
+[*Back to top*](#table-of-contents)
+
 ## Exploration
 
 ### 1. Exploring the Schema
@@ -68,6 +70,8 @@ tt0166938  tvSeries  Yo-TV
 tt0206169  short     The News No. 3                                      3              
 tt0214297  short     The Way to Shadow Garden                            10     
 ``` 
+
+[*Back to top*](#table-of-contents)
 
 ### 2. Filtering & Aggregation
 
@@ -134,6 +138,8 @@ tt11028174  9.9     20545
 tt9313978   9.9     17664  
 ```
 
+[*Back to top*](#table-of-contents)
+
 ### 3. Joining
 
 The rating information we just retrieved is based on `title_id`, which is not a very human-interpretable field. To find the corresponding movie titles, we need to join these ratings with their corresponding movies.
@@ -158,6 +164,8 @@ All Over the World: Yamashita Tomohisa to sekai de deau            10      100
 The View from Halfway Down                                         9.9     20545
 Victory and Death                                                  9.9     17664
 ```    
+
+[*Back to top*](#table-of-contents)
 
 ### 4. Common Table Expressions
 Common Table Expressions (CTEs) are a useful mechanism to simplify complex queries. They allow us to precompute temporary tables that can be used in other parts of the queries. While the join above is not complex enough to warrent using CTEs, we will use it as an example to get you started. Suppose that we wanted to first compute the set of excellent ratings and the set of movies before joining them.
@@ -186,6 +194,8 @@ Equipe E
 
 In this query, we first compute the table of excellent titles using the construct `WITH table_name(column_names...) AS (query)`. We then perform the join using this temporary table. 
 
+[*Back to top*](#table-of-contents)
+
 
 ## Questions
 
@@ -194,3 +204,5 @@ In this query, we first compute the table of excellent titles using the construc
 2. (Simple filtering and join) Find the action TV shows (`titles.type=tvSeries` and `titles.genres` contains `Action`) with a rating >= 8 and at least 100 votes. Return `title_id`, `name`, and `rating`. Order by `rating` (descending) and then `name` (ascending) to break ties.
 3. (Simple aggregation and join) Find the movie (`titles.type=movie`) with the most actors and actresses (cumulatively). If multiple movies are tied, return the one with the alphabetically smallest `primary_title`. Return the `title_id`, `primary_title`, and number of actors.
 4. (Simple subquery/CTE) Find the movie with the most actors and actresses (cumulatively). Unlike in question (3), you should return all such movies. Again, return the `title_id`, `primary_title` and number of actors. Order by `primary_title` (ascending).
+
+[*Back to top*](#table-of-contents)
