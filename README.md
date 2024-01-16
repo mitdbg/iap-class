@@ -16,10 +16,10 @@ We will have a total of 8 lectures on the following topics:
 We will also have optional assignments each day: a shorter one over lunch and a longer one overnight. You are free to do these at your own pace, or not at all; they are just meant to give you some practiec with the techniques.
 
 The schedule for each day will be as folllows:
-**10:00-10:15**: Homework questions from day before
-**10:15-11:45**: Morning lecture
-**11:45-12:30**: Lunch and lunch assignment
-**12:30-14:00**: Afternoon lecture
+- **10:00-10:15**: Homework questions from day before
+- **10:15-11:45**: Morning lecture
+- **11:45-12:30**: Lunch and lunch assignment
+- **12:30-14:00**: Afternoon lecture
 
 
 ## Setup
