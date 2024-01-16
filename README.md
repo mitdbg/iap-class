@@ -7,6 +7,7 @@ You can clone this repository to your local machine by executing the following a
 $ git clone git@github.com:mitdbg/iap-class.git
 $ cd iap-class
 ```
+To finish your installation, please look at the "Setup" section below.
 
 ## Logistics
 
