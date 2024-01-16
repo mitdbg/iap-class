@@ -1,6 +1,13 @@
 # iap-class
 Welcome to the "Programming with Data" IAP class!
 
+## Getting Started
+You can clone this repository to your local machine by executing the following at a terminal
+```
+$ git clone git@github.com:mitdbg/iap-class.git
+$ cd iap-class
+```
+
 ## Logistics
 
 We will have a total of 8 lectures on the following topics:
