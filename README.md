@@ -1,5 +1,26 @@
 # iap-class
-Resources for the "Programming with Data" IAP class.
+Welcome to the "Programming with Data" IAP class!
+
+## Logistics
+
+We will have a total of 8 lectures on the following topics:
+1. **Processing**: The relational data model and SQL.
+2. **Pandas and Data Wrangling**: Using the relational model in Python; working with text data.
+3. **Preparation**: Data preparation and cleaning.
+4. **Presentation**: Data visualizations and plotting.
+5. **Prediction**: Introduction to some Machine Learning techniques
+6. **PyTorch**: Introduction to Neural Networks.
+7. **Performance**: Improving data processing performance.
+8. **Parallelism**: Further improving performance through parallelism.
+
+We will also have optional assignments each day: a shorter one over lunch and a longer one overnight. You are free to do these at your own pace, or not at all; they are just meant to give you some practiec with the techniques.
+
+The schedule for each day will be as folllows:
+**10:00-10:15**: Homework questions from day before
+**10:15-11:45**: Morning lecture
+**11:45-12:30**: Lunch and lunch assignment
+**12:30-14:00**: Afternoon lecture
+
 
 ## Setup
 
